@@ -1,0 +1,186 @@
+/* Header Container */
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.headerBorderDark {
+  border-bottom-color: #283039;
+}
+
+.headerBorderLight {
+  border-bottom-color: #293542;
+}
+
+/* Header Left Section */
+.headerLeftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: black;
+}
+
+.headerLeftSectionHome {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headerLogoContainer {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headerTitle {
+  color: black;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* Navigation Links */
+.headerNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.headerNavLink {
+  color: black;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+/* Header Right Section */
+.headerRightSection {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+/* Search Bar (Home variant) */
+.headerSearchLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  height: 2.5rem;
+  max-width: 16rem;
+}
+
+.headerSearchContainer {
+  display: flex;
+  width: 100%;
+  flex: 1 1 0%;
+  align-items: stretch;
+  border-radius: 0.75rem;
+  height: 100%;
+}
+
+.headerSearchIconContainer {
+  color: #9cabba;
+  display: flex;
+  border: none;
+  background-color: #283039;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  border-radius: 0.75rem 0 0 0.75rem;
+  border-right-width: 0;
+}
+
+.headerSearchInput {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 0%;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  color: white;
+  outline: 0;
+  border: none;
+  background-color: #283039;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  border-left-width: 0;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.headerSearchInput::placeholder {
+  color: #9cabba;
+}
+
+.headerSearchInput:focus {
+  outline: 0;
+  ring: 0;
+  border: none;
+}
+
+/* Header Buttons */
+.headerButton {
+  display: flex;
+  max-width: 30rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 2.5rem;
+  color: white;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  min-width: 0;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.headerButtonRounded {
+  border-radius: 9999px;
+}
+
+.headerButtonSquared {
+  border-radius: 0.75rem;
+}
+
+.headerButtonDark {
+  background-color: #283039;
+}
+
+.headerButtonMedium {
+  background-color: #293542;
+}
+
+.headerButtonIcon {
+  color: white;
+}
+
+/* User Avatar */
+.headerUserAvatar {
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  background-size: cover;
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+

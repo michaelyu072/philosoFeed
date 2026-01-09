@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Friedrich Nietzsche",
+    "description": "German philosopher and cultural critic",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/nietzsche.png"
+  },
+  {
+    "name": "Plato",
+    "description": "Greek philosopher and mathematician",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/plato.png"
+  },
+  {
+    "name": "Immanuel Kant",
+    "description": "German philosopher and one of the central Enlightenment thinkers",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/kant.png"
+  },
+  {
+    "name": "Søren Kierkegaard",
+    "description": "Danish philosopher and theologian",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/kierk.png"
+  },
+  {
+    "name": "Aristotle",
+    "description": "Greek philosopher and scientist",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/aris.png"
+  },
+  {
+    "name": "Socrates",
+    "description": "Classical Greek philosopher credited as one of the founders of Western philosophy",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/socrates.png"
+  },
+  {
+    "name": "Marcus Aurelius",
+    "description": "Roman emperor and Stoic philosopher",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/marcus.png"
+  },
+  {
+    "name": "Rene Descartes",
+    "description": "French philosopher, mathematician, and scientist",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/des.png"
+  },
+  {
+    "name": "Albert Camus",
+    "description": "French philosopher, author, and journalist",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/camus.png"
+  },
+  {
+    "name": "Arthur Schopenhauer",
+    "description": "German philosopher best known for 'The World as Will and Representation'",
+    "imageUrl": "https://storage.googleapis.com/philosopher-images/art.png"
+  }
+]

@@ -1,0 +1,24 @@
+.avatarContainer {
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  background-size: cover;
+  border-radius: 9999px;
+}
+
+.avatarSizeDefault {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.avatarSizeSmall {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.avatarShrink {
+  flex-shrink: 0;
+}
+
+/* Import Avatar styles for use in other components */
+

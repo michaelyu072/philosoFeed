@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Philosopher Profile - Marcus Aurelius</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7ebf3] dark:border-gray-800 bg-white/80 dark:bg-[#101622]/90 backdrop-blur-md px-4 sm:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d121b] dark:text-white">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-xl">forum</span>
+</div>
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">PhiloChat</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Philosophers</a>
+<a class="text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">My Chats</a>
+<a class="text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Settings</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 sm:gap-8 items-center">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#4c669a] dark:text-gray-400 flex border-none bg-[#e7ebf3] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e7ebf3] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#4c669a] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search philosophers..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-gray-800 shadow-sm" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCs86JVtSsAesM6rZEZpuyzxbRzgIZCqkdS7Ka22ej7TQLqK0tbr3mBlKgyIBFSxtJNJPeN4s1GyGNNP45CrxAl4IU9zTC0TyvioBYrH8obd29NeS_YE7TMyalst9--oVRKUooeeI51gQROyDJAR3IV8IyTFgVaDiSvC0-g5IQ376EEYlWgvFL08tZF3VIx7PTfcE63NpuTCxFax5rB8ZzNfTBUreRv0z7nTw2sXv2-R8O5xYzD8cSZncWFtV8Wzsdzx9Ayx6UCXXaG");'></div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<div class="layout-container flex h-full grow flex-col px-4 sm:px-8 lg:px-40 py-6">
+<div class="flex flex-col max-w-[1200px] mx-auto w-full flex-1 gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center text-sm">
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-[#4c669a] dark:text-gray-500 font-medium">/</span>
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors font-medium" href="#">Philosophers</a>
+<span class="text-[#4c669a] dark:text-gray-500 font-medium">/</span>
+<span class="text-[#0d121b] dark:text-white font-semibold">Marcus Aurelius</span>
+</div>
+<!-- Profile Header Card -->
+<div class="bg-white dark:bg-[#1e2736] rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex flex-col md:flex-row gap-6 md:items-center justify-between">
+<div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-24 w-24 sm:h-32 sm:w-32 shadow-md shrink-0 border-4 border-white dark:border-gray-700" data-alt="Marble bust of Marcus Aurelius" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlawjcRcRWi87LJo99n_enA4ytBnfBdUrz7tPgIZGLpAU0UXzkaafrSawOpQDa639pRUfsTjCwy-emypzR99D1i5RaR-LIICKVfzm_GNeeagxdGlNetXSg5l2ZwC-1_w2qpIsm0YtyBnkEN9kFGSMBg_A_exady7XxWH5xgW-WvZnkBEVfgXCckRUSiAEBAAn3ibl2nczvHlS_BRR36T7n6K9elPqFTurxpMkeDNTgDOchE57abZPCulPsbx1HEFcleihHogFNNx_t");'></div>
+<div class="flex flex-col justify-center space-y-1">
+<h1 class="text-[#0d121b] dark:text-white text-3xl font-bold leading-tight tracking-tight">Marcus Aurelius</h1>
+<p class="text-primary font-semibold text-sm uppercase tracking-wider">Stoicism • 121 AD - 180 AD</p>
+<p class="text-[#4c669a] dark:text-gray-300 text-base font-normal leading-normal max-w-xl">Roman Emperor and a defining figure of Stoic philosophy. Best known for his private notes to himself, now known as the "Meditations".</p>
+</div>
+</div>
+<button class="flex shrink-0 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-700 transition-colors text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-blue-500/30 w-full md:w-auto">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span>Start Chat</span>
+</button>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-2">
+<!-- Main Content (Left, 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Biography Section -->
+<div class="bg-white dark:bg-[#1e2736] rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-[28px]">history_edu</span>
+<h2 class="text-[#0d121b] dark:text-white text-xl font-bold">Biography</h2>
+</div>
+<div class="prose dark:prose-invert max-w-none text-[#4c669a] dark:text-gray-300 leading-relaxed text-base">
+<p class="mb-4">
+                                    Marcus Aurelius was Roman emperor from 161 to 180 and a Stoic philosopher. He was the last of the rulers known as the Five Good Emperors, and the last emperor of the Pax Romana, an age of relative peace and stability for the Roman Empire. He served as Roman consul in 140, 145, and 161.
+                                </p>
+<p>
+                                    His "Meditations," written in Greek while on campaign between 170 and 180, is still revered as a literary monument to a philosophy of service and duty, describing how to find and preserve equanimity in the midst of conflict by following nature as a source of guidance and inspiration.
+                                </p>
+</div>
+</div>
+<!-- Philosophy in a Nutshell -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 sm:p-8 border border-primary/10 dark:border-primary/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-[28px]">psychology</span>
+<h2 class="text-[#0d121b] dark:text-white text-xl font-bold">Philosophy in a Nutshell</h2>
+</div>
+<p class="text-[#0d121b] dark:text-gray-200 text-lg font-medium italic leading-relaxed">
+                                "The happiness of your life depends upon the quality of your thoughts."
+                            </p>
+<p class="text-[#4c669a] dark:text-gray-400 mt-3 text-sm">
+                                Core Belief: Stoicism teaches the development of self-control and fortitude as a means of overcoming destructive emotions. It emphasizes that virtue is the only good and that we should live in harmony with reason and nature.
+                            </p>
+</div>
+<!-- Famous Quotes -->
+<div class="flex flex-col gap-4">
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold px-1">Famous Quotes</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+<span class="absolute top-4 left-4 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none select-none z-0">“</span>
+<p class="relative z-10 text-[#0d121b] dark:text-gray-200 font-medium pt-2">
+                                        You have power over your mind - not outside events. Realize this, and you will find strength.
+                                    </p>
+</div>
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+<span class="absolute top-4 left-4 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none select-none z-0">“</span>
+<p class="relative z-10 text-[#0d121b] dark:text-gray-200 font-medium pt-2">
+                                        Waste no more time arguing about what a good man should be. Be one.
+                                    </p>
+</div>
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+<span class="absolute top-4 left-4 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none select-none z-0">“</span>
+<p class="relative z-10 text-[#0d121b] dark:text-gray-200 font-medium pt-2">
+                                        The best revenge is to be unlike him who performed the injury.
+                                    </p>
+</div>
+<div class="bg-white dark:bg-[#1e2736] p-6 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+<span class="absolute top-4 left-4 text-6xl text-gray-100 dark:text-gray-700 font-serif leading-none select-none z-0">“</span>
+<p class="relative z-10 text-[#0d121b] dark:text-gray-200 font-medium pt-2">
+                                        Accept the things to which fate binds you, and love the people with whom fate brings you together, but do so with all your heart.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar (Right, 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Quick Facts Card -->
+<div class="bg-white dark:bg-[#1e2736] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-4 pb-2 border-b border-gray-100 dark:border-gray-700">Quick Stats</h3>
+<ul class="space-y-4">
+<li class="flex items-start justify-between">
+<span class="text-[#4c669a] dark:text-gray-400 text-sm">Born</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium text-right">April 26, 121 AD<br/><span class="text-xs text-gray-500">Rome, Italy</span></span>
+</li>
+<li class="flex items-start justify-between">
+<span class="text-[#4c669a] dark:text-gray-400 text-sm">Died</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium text-right">March 17, 180 AD<br/><span class="text-xs text-gray-500">Vindobona (Vienna)</span></span>
+</li>
+<li class="flex items-center justify-between">
+<span class="text-[#4c669a] dark:text-gray-400 text-sm">Era</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium">Ancient Philosophy</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="text-[#4c669a] dark:text-gray-400 text-sm">Region</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium">Western</span>
+</li>
+</ul>
+<div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+<span class="text-[#4c669a] dark:text-gray-400 text-xs uppercase font-bold tracking-wider mb-3 block">Main Interests</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-[#0d121b] dark:text-gray-200 text-xs font-medium rounded-full">Ethics</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-[#0d121b] dark:text-gray-200 text-xs font-medium rounded-full">Logic</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-[#0d121b] dark:text-gray-200 text-xs font-medium rounded-full">Fate</span>
+<span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-[#0d121b] dark:text-gray-200 text-xs font-medium rounded-full">Virtue</span>
+</div>
+</div>
+</div>
+<!-- Notable Works -->
+<div class="bg-white dark:bg-[#1e2736] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+                                Notable Works
+                            </h3>
+<ul class="space-y-3">
+<li class="flex gap-3 items-start group cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 p-2 -mx-2 rounded-lg transition-colors">
+<div class="bg-primary/10 text-primary p-2 rounded-lg shrink-0">
+<span class="material-symbols-outlined text-[20px]">book_2</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white font-semibold text-sm group-hover:text-primary transition-colors">Meditations</p>
+<p class="text-[#4c669a] dark:text-gray-400 text-xs line-clamp-2">A series of personal writings consisting of 12 books.</p>
+</div>
+</li>
+<!-- Placeholder for potential second work if applicable, though Meditations is the main one -->
+<li class="flex gap-3 items-start group cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 p-2 -mx-2 rounded-lg transition-colors opacity-60">
+<div class="bg-gray-100 dark:bg-gray-700 text-gray-400 p-2 rounded-lg shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white font-semibold text-sm">Letters to Fronto</p>
+<p class="text-[#4c669a] dark:text-gray-400 text-xs line-clamp-2">Correspondence with his tutor.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Similar Philosophers -->
+<div class="bg-white dark:bg-[#1e2736] rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-[#0d121b] dark:text-white text-lg font-bold mb-4">Similar Philosophers</h3>
+<div class="space-y-4">
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-10 rounded-full bg-cover bg-center bg-gray-200" data-alt="Bust of Epictetus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANLYmVvlRo7JgKCg52wq5RGqDEiHhxEqrYtBxSGNswlevIBIPKiuHeGWgqm48TGBua6nz253YpeGzO4QzLUIUoDKcjUTiLplsYN3rcHJpeNLw2-KlhitTq1cwveOqibMsSTwF_YYMpbOugs-7SmdoBT9WDYiPrT8i6le81D1k7Lre6X0zTz8ZzSqzmjhuyMdyxt8igWzhZYY2dOLGunV2UzhFj6Wj4DpbNXhxTMvpzH4S5BUjbZSMBnar7FUnoOPTE5Bcj9yObvHie");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d121b] dark:text-white group-hover:text-primary transition-colors">Epictetus</p>
+<p class="text-xs text-[#4c669a] dark:text-gray-400">Stoic Philosopher</p>
+</div>
+</a>
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-10 rounded-full bg-cover bg-center bg-gray-200" data-alt="Bust of Seneca" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-58HsVNkQJqKeqS9ka8-dlsdqLlIlORdzKjr_fD-VoQl3mhs5yEfXx-BgKgILjB2SBUa-K44Dl2RNn4w_dTRNanBwcdktX69rZcnIwi57P3GpgZAV8dM9tT92hScbc7wGJZb3blvQXQ_n46weNGVdVzazOYDr3DxIZOzEgoIL-BOaMwtUBjGjhDM7amrKoQfFUcLOCKYbLyKPpRCGv1kfNKBm1thDgwXFS13zGTMzL_wVc354EJePVzUtA5YrA3aptPhXt042tn4B");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d121b] dark:text-white group-hover:text-primary transition-colors">Seneca</p>
+<p class="text-xs text-[#4c669a] dark:text-gray-400">Stoic Philosopher</p>
+</div>
+</a>
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-10 rounded-full bg-cover bg-center bg-gray-200" data-alt="Bust of Plato" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6_dcIGEfohZkd3HVn8hPuv8hTJzf0zRPzI0M7HyE8F5yBz00qB7hdl82cn_GSDUEWs1WYTftTQTfybE7JaYOsuw4940QKTvhNrN3k_9u3E1S3rO0xxgWB-cTMXbpZLv_G4W34u52y4IdIxdtKZC-ngOcBp7KT6B39VOnZTPw-3SdQ6SqkUWnlnZcG7WPS_ME-0Ht_m2JuCkZTx2umydfmFiZ8ZmNC1_nYIJO2FTu2v1eN-M07bhgvPlIwYJllnwhyRnfNHzz5ykV6");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d121b] dark:text-white group-hover:text-primary transition-colors">Plato</p>
+<p class="text-xs text-[#4c669a] dark:text-gray-400">Classical Greek</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

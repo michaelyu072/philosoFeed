@@ -1,0 +1,210 @@
+/* Page Container */
+.createDebatePageContainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #f5ecd7; /* beige */
+  overflow-x: hidden;
+  font-family: Inter, "Noto Sans", sans-serif;
+  color: #181818; /* black text */
+}
+
+.createDebateContentWrapper {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.createDebateContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  max-width: 32rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  max-width: 60rem;
+  flex: 1 1 0%;
+}
+
+/* Header Section */
+.createDebateHeaderSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.createDebateTitle {
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  min-width: 18rem;
+}
+
+/* Form Fields */
+.createDebateFormField {
+  display: flex;
+  max-width: 30rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.createDebateFormLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  flex: 1 1 0%;
+}
+
+.createDebateFormLabelText {
+  color: #181818;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding-bottom: 0.5rem;
+}
+
+.createDebateSelect {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 0%;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  color: #181818;
+  outline: 0;
+  border-width: 1.5px;
+  border-color: #b89c3a;
+  background-color: #fff;
+  height: 3.5rem;
+  padding: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.createDebateSelect:focus {
+  outline: 0;
+  border: 1.5px solid #b89c3a;
+  background: #fffbe6;
+}
+
+.createDebateInput {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 0%;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  color: #181818;
+  outline: 0;
+  border-width: 1.5px;
+  border-color: #b89c3a;
+  background-color: #fff;
+  height: 3.5rem;
+  padding: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.createDebateInput::placeholder {
+  color: #b89c3a;
+}
+
+.createDebateInput:focus {
+  outline: 0;
+  border: 1.5px solid #b89c3a;
+  background: #fffbe6;
+}
+
+.createDebateTextarea {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 0%;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  color: #181818;
+  outline: 0;
+  border-width: 1.5px;
+  border-color: #b89c3a;
+  background-color: #fff;
+  min-height: 9rem;
+  padding: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.createDebateTextarea::placeholder {
+  color: #b89c3a;
+}
+
+.createDebateTextarea:focus {
+  outline: 0;
+  border: 1.5px solid #b89c3a;
+  background: #fffbe6;
+}
+
+/* Submit Button */
+.createDebateSubmitSection {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  justify-content: flex-end;
+}
+
+.createDebateSubmitButton {
+  display: flex;
+  min-width: 5.25rem;
+  max-width: 30rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #b89c3a;
+  color: #181818;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(184,156,58,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+.createDebateSubmitButton:hover {
+  background-color: #fffbe6;
+  color: #b89c3a;
+}
+
+.createDebateSubmitButtonText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

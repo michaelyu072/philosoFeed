@@ -1,0 +1,235 @@
+/* Page Container */
+.homePageContainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #f4f2eb; /* beige */
+  overflow-x: hidden;
+  font-family: Inter, "Noto Sans", sans-serif;
+  color: #181818; /* black text */
+}
+
+.layoutContainer {
+  display: flex;
+  height: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+
+.homeContentWrapper {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.homeContentContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  flex: 1 1 0%;
+}
+
+/* Header Section */
+.homeHeaderSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.homeHeaderTextContainer {
+  display: flex;
+  min-width: 18rem;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.homePageTitle {
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.homePageSubtitle {
+  color: #4d4637;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Search Section */
+.homeSearchSection {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.homeSearchLabel {
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  height: 3rem;
+  width: 100%;
+}
+
+.homeSearchInputContainer {
+  display: flex;
+  width: 100%;
+  flex: 1 1 0%;
+  align-items: stretch;
+  border-radius: 0.75rem;
+  height: 100%;
+  background: #fff;
+}
+
+.homeSearchIconContainer {
+  color: #b89c3a;
+  display: flex;
+  border: none;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  border-radius: 0.75rem 0 0 0.75rem;
+  border-right-width: 0;
+}
+
+.homeSearchInput {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 0%;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: #181818;
+  outline: 0;
+  border: none;
+  background-color: #fff;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-left-width: 0;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.homeSearchInput::placeholder {
+  color: #b89c3a;
+}
+
+.homeSearchInput:focus {
+  outline: 0;
+  border: 1.5px solid #b89c3a;
+  background: #fffbe6;
+}
+
+/* Featured Section */
+.homeFeaturedTitle {
+  color: #181818;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.75rem;
+  padding-top: 1.25rem;
+}
+
+.homePhilosophersGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.homePhilosopherCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  background: #f3e6c6;
+  border-radius: 1rem;
+  color: #181818;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+}
+
+.homePhilosopherImageContainer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.homePhilosopherImage {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1;
+  background-size: cover;
+  border-radius: 9999px;
+}
+
+.homePhilosopherName {
+  color: #181818;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.homePhilosopherDescription {
+  color: #4d4637;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Daily Quote Section */
+.homeDailyQuoteSection {
+  background: #f3e6c6;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 8px 32px 0 rgba(184, 156, 58, 0.18), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.homeDailyQuoteTitle {
+  color: #b89c3a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.homeDailyQuote {
+  color: #181818;
+  font-size: 1.15rem;
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+  padding-left: 0.5rem;
+  border-left: 3px solid #b89c3a;
+}
+
+.homeDailyQuoteAuthor {
+  color: #4d4637;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
