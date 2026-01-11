@@ -55,7 +55,7 @@ const Header = ({ variant = 'home' }) => {
     if (variant === 'create-debate') return "Philosopher's Arena"
     if (variant === 'chat') return "Philosopher Chat"
     if (variant === 'debate') return "Philosopher Chat"
-    return "PhilosoBite"
+    return "PhilosoFeed"
   }
 
   const getNavLinks = () => {

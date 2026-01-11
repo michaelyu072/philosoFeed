@@ -1,6 +1,6 @@
-# PhilosoBite - React Frontend
+# PhilosoFeed - React Frontend
 
-A React-based frontend application for the PhilosoBite platform, featuring philosopher chat and debate functionality.
+A React-based frontend application for the PhilosoFeed platform, featuring philosopher chat and debate functionality.
 
 ## Project Structure
 

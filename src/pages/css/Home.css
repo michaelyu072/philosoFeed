@@ -25,7 +25,7 @@
   display: flex;
   flex: 1 1 0%;
   justify-content: center;
-  padding-top: 1.25rem;
+  padding-top: 5rem;
   padding-bottom: 1.25rem;
 }
 
@@ -38,11 +38,10 @@
 
 /* Header Section */
 .homeHeaderSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.75rem;
+  display: block;
+  width: 100%;
   padding: 1rem;
+  /* Remove flex properties to allow children to take full width */
 }
 
 .homeHeaderTextContainer {
@@ -166,7 +165,6 @@
   background: #f3e6c6;
   border-radius: 1rem;
   color: #181818;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
 }
 
 .homePhilosopherImageContainer {
@@ -199,7 +197,7 @@
 
 /* Daily Quote Section */
 .homeDailyQuoteSection {
-  background: #f3e6c6;
+  background: #f7e8c4;
   border-radius: 1rem;
   padding: 1rem 1.5rem;
   margin-top: 1rem;
@@ -208,6 +206,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 50%
 }
 
 .homeDailyQuoteTitle {
@@ -231,5 +230,184 @@
   font-size: 1rem;
   font-weight: 400;
   margin-left: 0.5rem;
+}
+
+/* Today's Debate Section */
+.homeDebateOfTheDaySection {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  background: #fffbe6;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(184, 156, 58, 0.12), 0 1.5px 6px 0 rgba(0,0,0,0.06);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1.5rem;
+}
+
+.homeDebateOfTheDayLink {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+}
+
+.homeDebateOfTheDayTitle {
+  color: #b89c3a;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem 0;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  z-index: 4;
+  position: relative;
+}
+
+.homeDebateOfTheDayContent {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  gap: 0;
+  margin-bottom: 1.25rem;
+  background-color: transparent;
+  position: relative; /* Ensure children are absolutely positioned relative to this container */
+  overflow: hidden;   /* Prevent diagonal line from overflowing */
+}
+
+.homeDebatePhilosopher {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+}
+
+.homeDebatePhilosopherImg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+  background: none;
+  margin-bottom: 0;
+  border: none;
+  /* Remove background for PNGs with transparency */
+  background-color: transparent !important;
+  /* Optional: add a subtle outline for visibility on light backgrounds */
+  outline-offset: -2px;
+}
+
+.homeDebatePhilosopherName {
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem 0;
+  background: rgba(255,255,255,0.85);
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.homeDebateVs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 2.5rem;
+  box-shadow: 0 4px 24px 0 rgba(184,156,58,0.18);
+  z-index: 3;
+  display: block;
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-shadow: 0 2px 8px #b89c3a, 0 1px 2px #fffbe6;
+}
+
+.homeDebateDiagonalLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #b89c3a;
+  z-index: 3;
+  transform: translateX(-50%);
+  pointer-events: none;
+  /* Clip the line to the content area */
+  max-height: 100%;
+  bottom: 0;
+}
+
+.homeDebateTopic {
+  color: #4d4637;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+  text-align: center;
+  z-index: 4;
+  position: relative;
+}
+
+.homeDebateOfTheDaySection:hover {
+  box-shadow: 0 12px 40px 0 rgba(184, 156, 58, 0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
+  background: #fff9d6;
+}
+
+.homeDebateViewButton {
+  display: inline-block;
+  margin: 1.25rem auto 0 auto;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  background: #f7f3ea;
+  border: 2px solid #b89c3a;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px 0 rgba(215, 194, 118, 0.08);
+  cursor: pointer;
+}
+.homeDebateViewButton:hover, .homeDebateViewButton:focus {
+  background: #f3e6c6;
+  color: #b89c3a;
+  box-shadow: 0 4px 16px 0 rgba(215, 194, 118, 0.16);
+  outline: none;
 }
 

@@ -1,23 +1,21 @@
 /* Header Container */
 .headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
+  /* Remove border-bottom, add box-shadow for dividing line */
+  box-shadow: 0 8px 8px 0 rgba(215, 194, 118, 0.18), 0 1.5px 6px 0 rgba(0,0,0,0.08);
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.headerBorderDark {
-  border-bottom-color: #283039;
-}
-
-.headerBorderLight {
-  border-bottom-color: #293542;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #f7f3ea;
 }
 
 /* Header Left Section */

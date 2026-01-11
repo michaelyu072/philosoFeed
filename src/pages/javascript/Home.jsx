@@ -26,12 +26,29 @@ const Home = () => {
           <div className="homeContentContainer">
             <div className="homeHeaderSection">
               <div className="homeHeaderTextContainer">
-                <p className="homePageTitle">PhilosoBite</p>
+                <p className="homePageTitle">PhilosoFeed</p>
                 <p className="homePageSubtitle">Bite size philosophy for every day.</p>
                 <div className="homeDailyQuoteSection">
                   <p className="homeDailyQuoteTitle">Daily Quote</p>
                   <blockquote className="homeDailyQuote">"The unexamined life is not worth living."</blockquote>
                   <p className="homeDailyQuoteAuthor">— Socrates</p>
+                </div>
+                <div className="homeDebateOfTheDaySection">
+                  <div className="homeDebateOfTheDayTitle">Daily Debate</div>
+                  <div className="homeDebateOfTheDayContent">
+                    <div className="homeDebatePhilosopher">
+                      <img className="homeDebatePhilosopherImg" src={philosophersData[0].imageUrl} alt={philosophersData[0].name} />
+                      <span className="homeDebatePhilosopherName">{philosophersData[0].name}</span>
+                    </div>
+                    <span className="homeDebateDiagonalLine"></span>
+                    <span className="homeDebateVs">vs</span>
+                    <div className="homeDebatePhilosopher">
+                      <img className="homeDebatePhilosopherImg" src={philosophersData[1].imageUrl} alt={philosophersData[1].name} />
+                      <span className="homeDebatePhilosopherName">{philosophersData[1].name}</span>
+                    </div>
+                  </div>
+                  <div className="homeDebateTopic">Topic: What is the nature of reality?</div>
+                  <a className="homeDebateViewButton" href="/debate/1">View Debate</a>
                 </div>
               </div>
             </div>
