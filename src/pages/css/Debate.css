@@ -1,58 +1,109 @@
-/* Page Container */
+/* Debate.css - Modern, beige/black/gold chat-inspired debate UI */
+
 .debatePageContainer {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
   min-height: 100vh;
+  background: #f7f3ea;
+  color: #222;
+  font-family: 'Inter', 'Noto Sans', sans-serif;
+}
+
+.layoutContainer {
+  display: flex;
   flex-direction: column;
-  background-color: #14191f;
-  overflow-x: hidden;
-  font-family: Inter, "Noto Sans", sans-serif;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .debateContentWrapper {
-  padding-left: 10rem;
-  padding-right: 10rem;
   display: flex;
   flex: 1 1 0%;
   justify-content: center;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding: 2.5rem 0;
 }
 
 .debateContentContainer {
+  padding-top: 5rem;
+  background: transparent;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  max-width: 60rem;
-  flex: 1 1 0%;
+  gap: 0.5rem;
 }
 
-/* Debate Title */
 .debateTitle {
-  color: white;
+  color: #222;
   font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1.25;
-  padding-left: 1rem;
-  padding-right: 1rem;
   text-align: center;
-  padding-bottom: 0.75rem;
-  padding-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.015em;
 }
 
-/* Controls Section */
+.debateMessageRow {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.debateAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  border: 2px solid #b89c3a;
+  background: #f7f3ea;
+}
+
+.debateMessageContent {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.debateMessageHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.debateMessageName {
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.debateMessageTime {
+  color: #b89c3a;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.debateMessageText {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .debateControlsContainer {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .debateControlsGrid {
   display: grid;
-  gap: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 .debateControlButton {
@@ -60,26 +111,123 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  background-color: #14191f;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  background: #f7f3ea;
+  border-radius: 1rem;
+  padding: 1rem 0.5rem;
   text-align: center;
+  transition: background 0.18s;
+  cursor: pointer;
+  border: 2px solid #b89c3a;
+}
+
+.debateControlButton:hover {
+  background: #f3e6c6;
 }
 
 .debateControlIconContainer {
+  background: #b89c3a;
   border-radius: 9999px;
-  background-color: #293542;
-  padding: 0.625rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.debateControlIcon {
-  color: white;
+.debateControlIcon svg {
+  color: #222;
 }
 
 .debateControlLabel {
-  color: white;
-  font-size: 0.875rem;
+  color: #222;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.5;
+}
+
+.debateSlackMessage {
+  align-items: flex-start;
+  padding: 0.75rem 1.25rem;
+  gap: 1rem;
+  background: transparent;
+}
+
+.debateSlackMessage .debateAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  background: #f7f3ea;
+  border: 2px solid #b89c3a;
+  margin-right: 0.75rem;
+}
+
+.debateSlackMessage .debateMessageContent {
+  background: #fffbe6;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px 0 rgba(184,156,58,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  border: 1px solid #b89c3a;
+}
+
+.debateSlackMessage .debateMessageHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.debateSlackMessage .debateMessageName {
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.debateSlackMessage .debateMessageText {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.debateFadeIn {
+  opacity: 0;
+  animation: debateFadeIn 0.7s ease forwards;
+}
+
+@keyframes debateFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.debateNextButton {
+  margin: 2rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f3ea;
+  border: 2px solid #b89c3a;
+  border-radius: 999px;
+  color: #b89c3a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px 0 rgba(184,156,58,0.08);
+}
+
+.debateNextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.debateNextIcon {
+  font-size: 2rem;
+  color: #b89c3a;
 }
 

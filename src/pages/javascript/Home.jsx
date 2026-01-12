@@ -48,7 +48,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="homeDebateTopic">Topic: What is the nature of reality?</div>
-                  <a className="homeDebateViewButton" href="/debate/1">View Debate</a>
+                  <a className="homeDebateViewButton" href="/debate">View Debate</a>
                 </div>
               </div>
             </div>
