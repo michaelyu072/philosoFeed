@@ -11,6 +11,7 @@ interface DebateResponse {
   debate: {
     participant1: string;
     participant2: string;
+    id: string;
     topic: string;
     responses: Array<{
       participant: string;
@@ -61,6 +62,7 @@ export const simulatePhilosopherDebate = onSchedule({
     const result = await model.generateContent(prompt);
     // Gemini in JSON mode returns the string without markdown backticks
     const debateJson = JSON.parse(result.response.text()) as DebateResponse;
+    debateJson.debate.id = admin.firestore().collection('_').doc().id;
 
     // 4. Save to Firestore
     await db.collection("debates").add({
