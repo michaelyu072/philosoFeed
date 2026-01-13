@@ -411,3 +411,27 @@
   outline: none;
 }
 
+.homeDebateNextButton {
+  background: linear-gradient(90deg, #f5e9d4 0%, #e6cfa3 100%);
+  color: #222;
+  border: 2px solid #c6a664;
+  border-radius: 32px;
+  padding: 12px 32px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(198,166,100,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.homeDebateNextButton:active {
+  background: linear-gradient(90deg, #e6cfa3 0%, #f5e9d4 100%);
+}
+
+/* Remove arrow icon styling */
+.homeDebateNextIcon {
+  display: none;
+}
+

@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../../components/javascript/Header'
-import philosophersData from '../../philosophers.json'
+import { usePhilosophers } from '../../contexts/PhilosopherContext'
+import { useFirestoreDb } from '../../contexts/FirestoreContext'
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
 import '../css/Home.css'
 
 const Home = () => {
+  const { philosophers, loading } = usePhilosophers();
+  const db = useFirestoreDb();
   const [inputValue, setInputValue] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
+  const [dailyQuote, setDailyQuote] = useState(null)
+  const [quoteLoading, setQuoteLoading] = useState(true)
+  const [dailyDebate, setDailyDebate] = useState(null)
+  const [debateLoading, setDebateLoading] = useState(true)
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -14,14 +24,52 @@ const Home = () => {
     return () => clearTimeout(handler)
   }, [inputValue])
 
-  const filteredPhilosophers = philosophersData.filter(philosopher =>
+  useEffect(() => {
+    const fetchQuote = async () => {
+      setQuoteLoading(true)
+      const quotesRef = collection(db, 'quotes')
+      const q = query(quotesRef, orderBy('createdAt', 'desc'), limit(1))
+      const snapshot = await getDocs(q)
+      if (!snapshot.empty) {
+        setDailyQuote(snapshot.docs[0].data())
+      }
+      setQuoteLoading(false)
+    }
+    fetchQuote()
+  }, [db])
+
+  useEffect(() => {
+    const fetchDebate = async () => {
+      setDebateLoading(true)
+      const debatesRef = collection(db, 'debates')
+      const q = query(debatesRef, orderBy('createdAt', 'desc'), limit(1))
+      const snapshot = await getDocs(q)
+      if (!snapshot.empty) {
+        setDailyDebate(snapshot.docs[0].data())
+      }
+      setDebateLoading(false)
+    }
+    fetchDebate()
+  }, [db])
+
+  const filteredPhilosophers = philosophers.filter(philosopher =>
     philosopher.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
+
+  let debatePhilosophers = [];
+  let debateTopic = '';
+  let showDebateSection = false;
+  if (dailyDebate && dailyDebate.debateData) {
+    debateTopic = dailyDebate.debateData.topic || '';
+    const participants = [dailyDebate.debateData.participant1, dailyDebate.debateData.participant2];
+    debatePhilosophers = participants.map(name => philosophers.find(p => p.name === name)).filter(Boolean);
+    showDebateSection = participants.every(Boolean) && debatePhilosophers.length === 2;
+  }
 
   return (
     <div className="homePageContainer">
       <div className="layoutContainer">
-        <Header variant="home" />
+        <Header />
         <div className="homeContentWrapper">
           <div className="homeContentContainer">
             <div className="homeHeaderSection">
@@ -30,26 +78,48 @@ const Home = () => {
                 <p className="homePageSubtitle">Bite size philosophy for every day.</p>
                 <div className="homeDailyQuoteSection">
                   <p className="homeDailyQuoteTitle">Daily Quote</p>
-                  <blockquote className="homeDailyQuote">"The unexamined life is not worth living."</blockquote>
-                  <p className="homeDailyQuoteAuthor">— Socrates</p>
+                  {quoteLoading ? (
+                    <blockquote className="homeDailyQuote">Loading...</blockquote>
+                  ) : dailyQuote ? (
+                    <>
+                      <blockquote className="homeDailyQuote">{dailyQuote.content}</blockquote>
+                      <p className="homeDailyQuoteAuthor">— {dailyQuote.author}</p>
+                    </>
+                  ) : (
+                    <blockquote className="homeDailyQuote">No quote found.</blockquote>
+                  )}
                 </div>
-                <div className="homeDebateOfTheDaySection">
-                  <div className="homeDebateOfTheDayTitle">Daily Debate</div>
-                  <div className="homeDebateOfTheDayContent">
-                    <div className="homeDebatePhilosopher">
-                      <img className="homeDebatePhilosopherImg" src={philosophersData[0].imageUrl} alt={philosophersData[0].name} />
-                      <span className="homeDebatePhilosopherName">{philosophersData[0].name}</span>
+                {showDebateSection && (
+                  <div className="homeDebateOfTheDaySection">
+                    <div className="homeDebateOfTheDayTitle">Daily Debate</div>
+                    <div className="homeDebateOfTheDayContent">
+                      {debatePhilosophers[0] && (
+                        <div className="homeDebatePhilosopher" key={debatePhilosophers[0].name}>
+                          <img className="homeDebatePhilosopherImg" src={debatePhilosophers[0].imageUrl} alt={debatePhilosophers[0].name} />
+                          <span className="homeDebatePhilosopherName">{debatePhilosophers[0].name}</span>
+                        </div>
+                      )}
+                      <span className="homeDebateDiagonalLine"></span>
+                      <span className="homeDebateVs">vs</span>
+                      {debatePhilosophers[1] && (
+                        <div className="homeDebatePhilosopher" key={debatePhilosophers[1].name}>
+                          <img className="homeDebatePhilosopherImg" src={debatePhilosophers[1].imageUrl} alt={debatePhilosophers[1].name} />
+                          <span className="homeDebatePhilosopherName">{debatePhilosophers[1].name}</span>
+                        </div>
+                      )}
                     </div>
-                    <span className="homeDebateDiagonalLine"></span>
-                    <span className="homeDebateVs">vs</span>
-                    <div className="homeDebatePhilosopher">
-                      <img className="homeDebatePhilosopherImg" src={philosophersData[1].imageUrl} alt={philosophersData[1].name} />
-                      <span className="homeDebatePhilosopherName">{philosophersData[1].name}</span>
+                    <div className="homeDebateTopic">Topic: {debateTopic}</div>
+                    <div className="homeDebateMessages">
+                      {/* You can update this to use real debate data if available */}
                     </div>
+                    <button
+                      className="homeDebateNextButton"
+                      onClick={() => navigate('/debate')}
+                    >
+                      Go to Debate
+                    </button>
                   </div>
-                  <div className="homeDebateTopic">Topic: What is the nature of reality?</div>
-                  <a className="homeDebateViewButton" href="/debate">View Debate</a>
-                </div>
+                )}
               </div>
             </div>
             <div className="homeSearchSection">

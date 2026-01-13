@@ -1,29 +1,16 @@
 import { useEffect, useState } from 'react'
-import { getFirestore, collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
-import { initializeApp } from 'firebase/app'
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
 import Header from '../../components/javascript/Header'
-import philosophersData from '../../philosophers.json'
+import { usePhilosophers } from '../../contexts/PhilosopherContext'
+import { useFirestoreDb } from '../../contexts/FirestoreContext'
 import '../css/Debate.css'
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID
-}
-
-if (!window._firebaseApp) {
-  window._firebaseApp = initializeApp(firebaseConfig)
-}
-const db = getFirestore(window._firebaseApp)
 
 const Debate = () => {
   const [debate, setDebate] = useState(null)
   const [loading, setLoading] = useState(true)
   const [shownIdx, setShownIdx] = useState(0)
+  const { philosophers } = usePhilosophers();
+  const db = useFirestoreDb();
 
   useEffect(() => {
     const fetchDebate = async () => {
@@ -81,9 +68,9 @@ const Debate = () => {
     </div>
   )
 
-  // Map participant names to their imageUrl from philosophers.json
+  // Map participant names to their imageUrl from philosophers context
   const getAvatarUrl = (name) => {
-    const match = philosophersData.find(p => p.name === name)
+    const match = philosophers.find(p => p.name === name)
     return match ? match.imageUrl : undefined
   }
 

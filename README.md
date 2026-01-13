@@ -2,6 +2,13 @@
 
 A React-based frontend application for the PhilosoFeed platform, featuring philosopher chat and debate functionality.
 
+GCP backend daily generates a small philosophy debate for daily dose of wisdom.
+
+
+Demo Video:
+
+https://drive.google.com/file/d/1BHKKMjmNgw77jh7k9BlvGzCDEk7vmZkw/view?usp=sharing
+
 ## Project Structure
 
 ```
@@ -45,22 +52,8 @@ philosophize/
 
 ## Routes
 
-The application has 4 main routes:
+The application has 2 main routes:
 
 - `/` - Home page with featured philosophers
-- `/chat` - Chat interface with Socrates
-- `/create-debate` - Form to create a new debate
-- `/debate` - View an active debate between philosophers
-
-## Features
-
-- **Reusable Components**: Header, Avatar, and Message components that can be used across pages
-- **React Router**: Proper routing setup for navigation between pages
-- **Tailwind CSS**: Styled with Tailwind CSS matching the original HTML templates
-- **Static Content**: All hard-coded static content from the original HTML files is preserved
-
-## Notes
-
-- This is a visual-only setup. JavaScript functionality and API integration are not implemented yet.
-- The Tailwind plugins (`@tailwindcss/forms` and `@tailwindcss/container-queries`) are included in package.json but may need to be configured in `tailwind.config.js` if you encounter issues.
+- `/debate` - View an active daily debate between philosophers
 
